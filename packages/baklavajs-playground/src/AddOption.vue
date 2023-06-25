@@ -17,7 +17,7 @@ export default defineComponent({
             required: true
         }
     },
-    setup(props) {
+    setup(props:any) {
         const onClick = () => {
             props.node.action(props.name);
         };

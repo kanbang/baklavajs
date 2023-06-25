@@ -1,4 +1,6 @@
+// @ts-ignore
 import { ComponentOptions, markRaw } from "vue";
+
 import { IPlugin, IEditor } from "../../baklavajs-core/types";
 import { SequentialHook } from "@baklavajs/events";
 import { IViewNode, IViewPlugin } from "../types";

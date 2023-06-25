@@ -8,7 +8,7 @@
                 class="dark-input"
                 v-model="tempName"
                 placeholder="Node Name"
-                v-click-outside="doneRenaming"
+                v-click-outside-element="doneRenaming"
                 @keydown.enter="doneRenaming"
             />
 
@@ -84,8 +84,7 @@
 <script lang="ts">
 import { Options, Vue, Prop, Inject } from "vue-property-decorator";
 
-// @ts-ignore
-import ClickOutside from "v-click-outside";
+
 
 import { ViewPlugin } from "../../viewPlugin";
 import { IViewNode } from "../../../types";
@@ -98,7 +97,6 @@ interface IPosition {
 
 @Options({
     directives: {
-        ClickOutside: ClickOutside.directive,
     },
 })
 export default class NodeView extends Vue {

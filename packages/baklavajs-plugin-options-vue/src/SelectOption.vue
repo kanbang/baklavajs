@@ -2,7 +2,7 @@
 <div
     :class="['dark-select', { '--open': open }]"
     @click="open = !open"
-    v-click-outside="() => { open = false; }"
+    v-click-outside-element="() => { open = false; }"
 >
     <div class="__selected">
         <div class="__text">{{ selectedText }}</div>
@@ -29,8 +29,7 @@ import { Options, Vue, Prop } from "vue-property-decorator";
 import Arrow from "./Arrow.vue";
 import { INodeOption, INodeInterface } from "../../baklavajs-core/types";
 
-// @ts-ignore
-import ClickOutside from "v-click-outside";
+
 
 interface IAdvancedItem {
     text: string;
@@ -43,7 +42,6 @@ type ItemType = string|IAdvancedItem;
         "i-arrow": Arrow
     },
     directives: {
-        ClickOutside: ClickOutside.directive
     },
     emits: ["input"]
 })

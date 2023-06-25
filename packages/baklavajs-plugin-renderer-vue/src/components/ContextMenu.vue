@@ -1,5 +1,5 @@
 <template>
-    <div :class="classes" :style="styles" v-show="modelValue" v-click-outside="onClickOutside">
+    <div :class="classes" :style="styles" v-show="modelValue" v-click-outside-element="onClickOutside">
         <template v-for="(item, index) in _items">
             <div v-if="item.isDivider" :key="`divider-${index}`" class="divider"></div>
 
@@ -39,8 +39,7 @@
 <script lang="ts">
 import { Options, Prop, Vue, Watch } from "vue-property-decorator";
 
-// @ts-ignore
-import ClickOutside from "v-click-outside";
+
 
 export interface IMenuItem {
     label?: string;
@@ -53,7 +52,6 @@ export interface IMenuItem {
 
 @Options({
     directives: {
-        ClickOutside: ClickOutside.directive,
     },
     emits: ["update:modelValue", "click"]
 })
