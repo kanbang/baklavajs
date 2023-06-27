@@ -1,9 +1,9 @@
 {
-  "name": "@baklavajs/plugin-renderer-vue3",
-  "version": "1.9.3",
+  "name": "@kanbang/plugin-renderer-vue3",
+  "version": "1.10.1",
   "description": "Add types to node interfaces for BaklavaJS",
-  "author": "newcat <freddy.wagner@web.de>",
-  "homepage": "https://newcat.github.io/baklavajs",
+  "author": "zhai",
+  "homepage": "https://github.com/kanbang/baklavajs",
   "license": "MIT",
   "files": [
     "dist/**/!(report.html)"
@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/newcat/baklavajs.git"
+    "url": "git+https://github.com/kanbang/baklavajs.git"
   },
   "bugs": {
-    "url": "https://github.com/newcat/baklavajs/issues"
+    "url": "https://github.com/kanbang/baklavajs/issues"
   },
   "dependencies": {
     "@baklavajs/events": "^1.9.3",
