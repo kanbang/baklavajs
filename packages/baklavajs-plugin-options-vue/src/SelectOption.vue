@@ -1,27 +1,21 @@
 <template>
-<div
-    :class="['dark-select', { '--open': open }]"
-    @click="open = !open"
-    v-click-outside-element="() => { open = false; }"
->
-    <div class="__selected">
-        <div class="__text">{{ selectedText }}</div>
-        <div class="__icon">
-            <i-arrow></i-arrow>
+    <div :class="['dark-select', { '--open': open }]" @click="open = !open"
+        v-click-outside-element="() => { open = false; }">
+        <div class="__selected">
+            <div class="__label .text-truncate">{{ name }}</div>
+            <div class="__text">{{ selectedText }}</div>
+            <div class="__icon">
+                <i-arrow></i-arrow>
+            </div>
         </div>
+        <transition name="slide-fade">
+            <div class="__dropdown" v-show="open">
+                <div class="item --header">{{ name }}</div>
+                <div v-for="(item, i) in items" :key="i" :class="['item', { '--active': isSelected(item) }]"
+                    @click="setSelected(item)">{{ getItemText(item) }}</div>
+            </div>
+        </transition>
     </div>
-    <transition name="slide-fade">
-        <div class="__dropdown" v-show="open">
-            <div class="item --header">{{ name }}</div>
-            <div
-                v-for="(item, i) in items"
-                :key="i"
-                :class="['item', { '--active': isSelected(item) }]"
-                @click="setSelected(item)"
-            >{{ getItemText(item) }}</div>
-        </div>
-    </transition>
-</div>
 </template>
 
 <script lang="ts">
@@ -35,7 +29,7 @@ interface IAdvancedItem {
     text: string;
     value: any;
 }
-type ItemType = string|IAdvancedItem;
+type ItemType = string | IAdvancedItem;
 
 @Options({
     components: {
@@ -57,10 +51,10 @@ export default class SelectOption extends Vue {
     value!: any;
 
     @Prop({ type: Object })
-    option!: INodeOption|INodeInterface;
+    option!: INodeOption | INodeInterface;
 
     get isAdvancedMode() {
-        return !this.items.every((i) => typeof(i) === "string");
+        return !this.items.every((i) => typeof (i) === "string");
     }
 
     get selectedText() {

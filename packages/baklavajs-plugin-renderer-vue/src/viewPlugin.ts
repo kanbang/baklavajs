@@ -20,6 +20,8 @@ export class ViewPlugin implements IPlugin, IViewPlugin {
     public panning = { x: 0, y: 0 };
     public scaling = 1;
     public sidebar = { visible: false, nodeId: "", optionName: "" };
+    // zhai kk
+    public disable_context_menu = false;
 
     /** Use straight connections instead of bezier curves */
     public useStraightConnections = false;

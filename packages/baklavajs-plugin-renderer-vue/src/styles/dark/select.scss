@@ -13,7 +13,7 @@
 
     & > .__selected {
         background-color: $color-control-dark-background;
-        padding: 0.35em 0.75em;
+        // padding: 0.35em 0.75em;
         border-radius: $border-radius-control;
         transition: background $visual-transition;
         min-height: 1.7em;
@@ -28,9 +28,15 @@
             background: $color-control-dark-active;
         }
 
+        & > .__label, & > .__text {
+            flex: 1 1 auto;
+            text-overflow: ellipsis;
+            padding: 0 0.5em;
+            margin: 0.35em 0;
+        }
+
         & > .__text {
             flex: 1 0 auto;
-            flex-basis: 0;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
